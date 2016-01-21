@@ -1,5 +1,5 @@
-/*Program that simulates die throws by a computer using the random 
-number generators
+/*Program that emulates 1000 die throws using the random 
+number generator
 */
 package diethrows;
 /**
