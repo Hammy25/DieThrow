@@ -1,0 +1,8 @@
+#untracked folders
+build
+dist
+nbproject
+#untracked files
+build.xml
+manifest.mf
+
