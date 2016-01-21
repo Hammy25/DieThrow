@@ -1,6 +1,7 @@
 A java program that use Java's random number generator to emulate 1000 die throws.
 It outputs the percentage and frequency of each face.
 
+
 |Face	|Frequency	|Percentage
  ----------------------------------
 |1	|169		|16.9%
@@ -10,3 +11,4 @@ It outputs the percentage and frequency of each face.
 |5	|176		|17.6%
 |6	|143		|14.3%
 |Total	|1000		|100%
+
