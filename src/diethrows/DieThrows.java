@@ -9,70 +9,40 @@ import java.util.Random;
 public class DieThrows {
    
     public static void main(String[] args) {
-        //Keep scores of faces
-        int scoreOne = 0, scoreTwo = 0, scoreThree = 0, scoreFour = 0, scoreFive = 0, scoreSix = 0;
-        double p1=0, p2=0, p3=0, p4=0, p5=0, p6=0,percentage=0;
-        int num, count, outputCount = 0,frequency=0;
+        //keep scores of faces
+        int [] scoreArray = new int[6];
+        double percentage=0;
+        int num, count, outputCount = 1,frequency=0;
         Random randomGen = new Random();
         for( count = 1;count <= 1000; count++){
             num = generateDieFace(randomGen);
-//            System.out.print(num + "\n");
             switch(num){
                 case 1:
-                    scoreOne++;
+                    scoreArray[0]++;
                     break;
                 case 2:
-                    scoreTwo++;
+                    scoreArray[1]++;
                     break;
                 case 3:
-                    scoreThree++;
+                    scoreArray[2]++;
                     break;
                 case 4:
-                    scoreFour++;
+                    scoreArray[3]++;
                     break;
                 case 5:
-                    scoreFive++;
+                    scoreArray[4]++;
                     break;
                 case 6:
-                    scoreSix++;
+                    scoreArray[5]++;
                     break;
             }
         }
-        p1 = (double) scoreOne/10;
-        p2 = (double) scoreTwo/10;
-        p3 = (double) scoreThree/10;
-        p4 = (double) scoreFour/10;
-        p5 = (double) scoreFive/10;
-        p6 = (double) scoreSix/10;
         System.out.println("Face \t Frequency \t Percentage\n");
-        for(outputCount=1; outputCount<=6; outputCount++){
-            switch(outputCount){
-                case 1:
-                    frequency = scoreOne;
-                    percentage = p1;
-                    break;
-                case 2:
-                    frequency = scoreTwo;
-                    percentage = p2;
-                    break;
-                case 3:
-                    frequency = scoreThree;
-                    percentage = p3;
-                    break;
-                case 4:
-                    frequency = scoreFour;
-                    percentage = p4;
-                    break;
-                case 5:
-                    frequency = scoreFive;
-                    percentage = p5;
-                    break;
-                case 6:
-                    frequency = scoreSix;
-                    percentage = p6;
-                    break;
-            }
+        for(int score : scoreArray){
+            frequency = score;
+            percentage = (double) frequency/10;
             System.out.println(outputCount+" \t "+frequency+" \t "+percentage+"%\n");
+            outputCount++;
         }    
             System.out.println("Total \t 1000 \t 100%");
     }
