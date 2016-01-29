@@ -15,7 +15,7 @@ public class DieThrows {
         int num, count, outputCount = 1;
         Random randomGen = new Random();
         for( count = 1;count <= 1000; count++){
-            num = generateDieFace(randomGen);
+            num = randomGen.nextInt(6)+1;
             switch(num){
                 case 1:
                     scoreArray[0]++;
@@ -45,16 +45,4 @@ public class DieThrows {
         }    
             System.out.println("Total \t 1000 \t 100%");
     }
-    
-    private static int generateDieFace(Random aRandom){
-        int start = 1, end = 6;
-        int randomNumber;
-        //get the number of options we have
-        //cast to long to avoid overflow
-        long range = (long) end + 1 - (long) start;
-        //get a random fraction
-        long fraction = (long) (range * aRandom.nextDouble());
-        randomNumber = (int) (fraction + start);
-        return randomNumber;
-    }   
 }
