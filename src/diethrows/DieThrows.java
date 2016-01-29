@@ -12,7 +12,11 @@ public class DieThrows {
         //keep scores of faces
         int [] scoreArray = new int[6];
         double percentage=0;
+<<<<<<< HEAD
         int num, count, outputCount = 1;
+=======
+        int num, count, outputCount = 1,frequency=0;
+>>>>>>> d557a59ced9454fb9c0f8b04addd5dc59cb7ba9d
         Random randomGen = new Random();
         for( count = 1;count <= 1000; count++){
             num = generateDieFace(randomGen);
@@ -39,8 +43,14 @@ public class DieThrows {
         }
         System.out.println("Face \t Frequency \t Percentage\n");
         for(int score : scoreArray){
+<<<<<<< HEAD
             percentage = (double) score/10;
             System.out.println(outputCount+" \t "+score+" \t "+percentage+"%\n");
+=======
+            frequency = score;
+            percentage = (double) frequency/10;
+            System.out.println(outputCount+" \t "+frequency+" \t "+percentage+"%\n");
+>>>>>>> d557a59ced9454fb9c0f8b04addd5dc59cb7ba9d
             outputCount++;
         }    
             System.out.println("Total \t 1000 \t 100%");
