@@ -5,44 +5,43 @@ package diethrows;
 /**
  * @author Hammy25
  */
-import java.util.Random;
+//import java.util.Random;
 public class DieThrows {
    
     public static void main(String[] args) {
         //keep scores of faces
         int [] scoreArray = new int[6];
         double percentage=0;
-        int num, count, outputCount = 1;
-        Random randomGen = new Random();
+        int count, outputCount = 1;
+        double num;
+        double y = 1.0/6.0;
+//        Random randomGen = new Random();
+//        System.out.print(y);
         for( count = 1;count <= 1000; count++){
-            num = randomGen.nextInt(6)+1;
-            switch(num){
-                case 1:
+            num = Math.random();
+//            System.out.println(num+ "\n");
+            if( num<y){
                     scoreArray[0]++;
-                    break;
-                case 2:
+            }else if(num < y*2){
                     scoreArray[1]++;
-                    break;
-                case 3:
+            }else if(num<y*3){
                     scoreArray[2]++;
-                    break;
-                case 4:
-                    scoreArray[3]++;
-                    break;
-                case 5:
-                    scoreArray[4]++;
-                    break;
-                case 6:
-                    scoreArray[5]++;
-                    break;
             }
+            else if(num<y*4){
+                scoreArray[3]++;
+            }
+            else if(num<y*5){
+                scoreArray[4]++;
+            }else{scoreArray[5]++;}
         }
-        System.out.println("Face \t Frequency \t Percentage\n");
+        System.out.println("Face \t Frequency\tPercentage\n");
+        System.out.println("-----------------------------------\n");
         for(int score : scoreArray){
             percentage = (double) score/10;
-            System.out.println(outputCount+" \t "+score+" \t "+percentage+"%\n");
+            System.out.println(outputCount+" \t "+score+" \t\t"+percentage+"\n");
             outputCount++;
         }    
-            System.out.println("Total \t 1000 \t 100%");
+            System.out.println("-----------------------------------\n");
+            System.out.println("Total \t 1000 \t\t100%");
     }
 }
